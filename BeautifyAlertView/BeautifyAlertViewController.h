@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+typedef enum {
+    StyleNormal = 0,
+    StyleReport
+} AlertStyle;
 
-@interface BeautifyAlertViewController : UIViewController <UITextViewDelegate>
+@interface BeautifyAlertViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
 - (void)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle icon:(UIImage *)icon;
+- (void)initWithIcon:(UIImage *)icon hint:(NSString *)hint style:(int)style;
 @end
 
-NS_ASSUME_NONNULL_END

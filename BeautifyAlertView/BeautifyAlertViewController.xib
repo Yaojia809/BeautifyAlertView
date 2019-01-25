@@ -20,17 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fPC-ds-Fmu">
+                <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6a-7F-HAV">
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" red="0.33787411103393827" green="0.33787411103393827" blue="0.33787411103393827" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                </imageView>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fPC-ds-Fmu" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="3kk-eP-wrN"/>
-                <constraint firstItem="fPC-ds-Fmu" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="8JT-ll-cr9"/>
-                <constraint firstItem="fPC-ds-Fmu" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="Jqc-Ma-azi"/>
-                <constraint firstItem="fPC-ds-Fmu" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="jbP-oW-HfZ"/>
+                <constraint firstItem="h6a-7F-HAV" firstAttribute="trailing" secondItem="Q5M-cg-NOt" secondAttribute="trailing" id="GYV-1O-BiL"/>
+                <constraint firstItem="h6a-7F-HAV" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="fno-Hs-ngo"/>
+                <constraint firstItem="h6a-7F-HAV" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="rw9-lU-6Ss"/>
+                <constraint firstItem="h6a-7F-HAV" firstAttribute="bottom" secondItem="Q5M-cg-NOt" secondAttribute="bottom" id="wcB-94-C5L"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
             <point key="canvasLocation" x="53.600000000000001" y="48.125937031484263"/>
