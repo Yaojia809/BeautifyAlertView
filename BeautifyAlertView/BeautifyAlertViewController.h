@@ -14,7 +14,11 @@ typedef enum {
 } AlertStyle;
 
 @interface BeautifyAlertViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
+@property UIButton *btnOk;
+@property UIButton *btnCancel;
+
 - (void)initWithTitle:(NSString *)title subtitle:(NSString *)subtitle icon:(UIImage *)icon;
 - (void)initWithIcon:(UIImage *)icon hint:(NSString *)hint style:(int)style;
+- (void)associateButton:(UIButton *)button withAction:action;
 @end
 

@@ -22,22 +22,25 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
-//    self.modalPresentationStyle = UIModalPresentationCurrentContext;
-//    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     
     BeautifyAlertViewController *vc = [BeautifyAlertViewController new];
     
-//    [vc initWithTitle:@"This is a title" subtitle:@"This is a subtitle" icon:[UIImage imageNamed:@"icon"]];
-//    [self addChildViewController:vc];
+//    [vc initWithIcon:[UIImage imageNamed:@"icon"] hint:@"To Report this post please weitr a description so we can review." style:StyleReport];
 //    [self presentViewController:vc animated:NO completion:nil];
-//    [self.view addSubview:vc.view];
     
-    
-    [vc initWithIcon:[UIImage imageNamed:@"icon"] hint:@"Are you sure you want to delete your post?" style:StyleReport];
+    [vc initWithIcon:[UIImage imageNamed:@"icon"] hint:@"Are you sure you want to delete your post?" style:StyleNormal];
+    [vc.btnOk addTarget:self action:@selector(clickOk) forControlEvents:UIControlEventTouchUpInside];
+    [vc.btnCancel addTarget:self action:@selector(clickCancel) forControlEvents:UIControlEventTouchUpInside];
     [self presentViewController:vc animated:NO completion:nil];
     
-
 }
 
+-(void)clickOk{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+-(void)clickCancel{
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
 
 @end

@@ -15,8 +15,6 @@
 @property UILabel *lblHint;
 @property UITextField *textFieldTitle;
 @property UITextView *textViewContent;
-@property UIButton *btnOk;
-@property UIButton *btnCancel;
 @end
 
 @implementation BeautifyAlertViewController
@@ -38,6 +36,7 @@
     self.viewAlert = [[UIView alloc] initWithFrame:CGRectMake(9, 175, 357, 318)];
     self.viewAlert.backgroundColor = [UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:239.0/255.0 alpha:1.0];
     self.viewAlert.layer.cornerRadius = 15.0;
+    self.viewAlert.clipsToBounds = YES;
     [self.view addSubview:self.viewAlert];
     
     // icon
@@ -133,7 +132,7 @@
                                                               relatedBy:NSLayoutRelationEqual
                                                                  toItem:self.view
                                                               attribute:NSLayoutAttributeWidth
-                                                             multiplier:0.4
+                                                             multiplier:0.6
                                                                constant:0.0]];
         [self.view addConstraint:[NSLayoutConstraint constraintWithItem:self.viewAlert
                                                               attribute:NSLayoutAttributeHeight
@@ -337,13 +336,7 @@
                                                                attribute:NSLayoutAttributeWidth
                                                               multiplier:0.5
                                                                 constant:0.0]];
-    [self.viewAlert addConstraint:[NSLayoutConstraint constraintWithItem:self.btnOk
-                                                               attribute:NSLayoutAttributeHeight
-                                                               relatedBy:NSLayoutRelationEqual
-                                                                  toItem:self.viewAlert
-                                                               attribute:NSLayoutAttributeHeight
-                                                              multiplier:0.1
-                                                                constant:0.0]];
+    
 
     
     [self.viewAlert addConstraint:[NSLayoutConstraint constraintWithItem:self.btnCancel
@@ -367,13 +360,21 @@
                                                                attribute:NSLayoutAttributeWidth
                                                               multiplier:0.5
                                                                 constant:0.0]];
-    [self.viewAlert addConstraint:[NSLayoutConstraint constraintWithItem:self.btnCancel
-                                                               attribute:NSLayoutAttributeHeight
+    
+    [self.viewAlert addConstraint:[NSLayoutConstraint constraintWithItem:self.btnOk
+                                                               attribute:NSLayoutAttributeTop
                                                                relatedBy:NSLayoutRelationEqual
-                                                                  toItem:self.viewAlert
-                                                               attribute:NSLayoutAttributeHeight
-                                                              multiplier:0.1
-                                                                constant:0.0]];
+                                                                  toItem:(style == StyleNormal)? self.lblHint:self.textViewContent
+                                                               attribute:NSLayoutAttributeBottom
+                                                              multiplier:1.0
+                                                                constant:8.0]];
+    [self.viewAlert addConstraint:[NSLayoutConstraint constraintWithItem:self.btnCancel
+                                                               attribute:NSLayoutAttributeTop
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:(style == StyleNormal)? self.lblHint:self.textViewContent
+                                                               attribute:NSLayoutAttributeBottom
+                                                              multiplier:1.0
+                                                                constant:8.0]];
     
 }
 
@@ -397,5 +398,10 @@
     [self.lblHint setText:hint];
     
 }
+
+//- (void)associateButton:(UIButton *)button
+//             withAction:action{
+//    [button addTarget:self action:@selector(action) forControlEvents:UIControlEventTouchUpInside];
+//}
 
 @end
