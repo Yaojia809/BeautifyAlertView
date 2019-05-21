@@ -31,7 +31,7 @@
     [vc initWithIcon:[UIImage imageNamed:@"icon"] hint:@"Are you sure you want to delete your post?" style:StyleNormal];
     [vc.btnOk addTarget:self action:@selector(clickOk) forControlEvents:UIControlEventTouchUpInside];
     [vc.btnCancel addTarget:self action:@selector(clickCancel) forControlEvents:UIControlEventTouchUpInside];
-    [self presentViewController:vc animated:NO completion:nil];
+//    [self presentViewController:vc animated:NO completion:nil];
     
 }
 
